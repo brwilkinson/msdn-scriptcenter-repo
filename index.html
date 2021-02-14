@@ -9,7 +9,50 @@ css: ["index.css"]
     {% include search_form.html %}
   </div>
 
-  <!-- <div class="tag-div" style="margin-top: 1rem;">
+  {% comment %} <div class="thi-columns">
+    <ul class="tag-post">
+    {% for script in site.data.scripts.userProject %}
+      <a class="post-title" href="{{ script.ProjectId }}{{ post.url }}">
+        <li>
+          {{ script.Title }} <small class="post-date">{{script.PublishedDate | date: "%d/%m/%Y"}}</small>
+          
+        </li>
+      </a>
+    {% endfor %}
+    </ul>
+  </div> {% endcomment %}
+
+{% tablerow item in site.data.scripts.userProject cols: 10 %}
+<table>
+<tr>
+<td>Script Title</td>
+<td>{{ item.Title }}</td>
+</tr>
+<tr>
+<td>Script Description</td>
+<td>{{ item.Description }}</td>
+</tr>
+<tr>
+<td>Script CreatedDate</td>
+<td>{{ item.CreatedDate }}</td>
+</tr>
+<tr>
+<td>Script ProjectName</td>
+<td>{{ item.ProjectName }}</td>
+</tr>
+<tr>
+<td>Script ProjectId</td>
+<td>{{ item.ProjectId }}</td>
+</tr>
+<tr>
+<td>Script</td>
+<td><a href="{{site.url }}/artifacts/{{ item.ProjectId }}/{{item.ScriptFile}}">{{item.ScriptFile}}</a></td>
+</tr>
+</table>
+<br/>
+{% endtablerow %}
+
+  <div class="tag-div" style="margin-top: 1rem;">
     <h2 class="h2-title">Categories</h2>
     <div class="tag-list">
       {% for cat in site.categories %}
@@ -25,7 +68,7 @@ css: ["index.css"]
         {% endif %}
       {% endfor %}
     </div>
-  </div> -->
+  </div>
 
   <!-- <h2 class="h2-title">List of notes</h2> -->
 

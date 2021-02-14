@@ -3,6 +3,7 @@ layout: post
 title:  "My first post"
 date:   2021-02-06 18:20:41 -0800
 categories: testing
+tags: [testing]
 ---
 
 You can use the [editor on GitHub](https://github.com/brwilkinson/MSDN-SCRIPT-CENTER-REPO/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
