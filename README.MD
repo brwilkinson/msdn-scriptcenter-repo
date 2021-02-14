@@ -11,8 +11,8 @@
 1) Fork this repo https://github.com/brwilkinson/msdn-scriptcenter-repo
 1) Then Clone the fork "https://github.com/**yourusername**/msdn-scriptcenter-repo"
 1) Place all of the Script Directories (from the script extract) into the project "artifacts" directory. E.g. each in it's own folder, a direct copy from what you downloaded.
-1) Copy the metadata file from your download and copy it over the top of the _data\scripts.json file.
-    1) For now we are only using the "userProject" array from that file, you can choose to delete the rest of the objects, if you like.
+1) Copy the metadata file E.g. gallery_{GUID}.json file from your download and copy it over the top of the _data\scripts.json file.
+    1) For now we are only using the "userProject" array from the JSON object, you can choose to delete the other arraya/objects, if you like.
 1) Execute the script in the scripts directory scripts\add-script-metadata.ps1
     1) This will recurse through all of the directories under artifacts and find only those with a nested ps1 file
     1) It will update the metadata in the data File to include the script path used to link to your scripts in github
