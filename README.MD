@@ -7,9 +7,10 @@
 1) Log in
 1) Click on the Privacy Tab
 1) Click on the "CREATE" button next to "Collect your data from MSDN Code Gallery, TechNet Code Gallery all together"
-1) Once it completes Donwload your ZIP of your scripts and extract it.
-1) Clone this repo https://github.com/brwilkinson/msdn-scriptcenter-repo
-1) Place all of the Script Directories (from the scritp extract) into the project "artifacts" directory. E.g. each in it's own folder
+1) Once it completes Download your ZIP of your scripts and extract it.
+1) Fork this repo https://github.com/brwilkinson/msdn-scriptcenter-repo
+1) Then Clone the fork https://github.com/<yourusername>/msdn-scriptcenter-repo
+1) Place all of the Script Directories (from the script extract) into the project "artifacts" directory. E.g. each in it's own folder
 1) Copy the metadata file from your download and copy it over the top of the _data\scripts.json file.
     1) For now we are only using the "userProject" array from that file, you can choose to delete the rest of the objects, if you like.
 1) Execute the script in the scripts directory scripts\add-script-metadata.ps1
