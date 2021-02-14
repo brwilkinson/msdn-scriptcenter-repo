@@ -33,17 +33,21 @@ css: ["index.css"]
 <td>{{ item.Description }}</td>
 </tr>
 <tr>
+<td>Script ModifiedDate</td>
+<td>{{ item.ModifiedDate }}</td>
+</tr>
+<tr>
 <td>Script CreatedDate</td>
 <td>{{ item.CreatedDate }}</td>
 </tr>
-<tr>
+{% comment %} <tr>
 <td>Script ProjectName</td>
 <td>{{ item.ProjectName }}</td>
-</tr>
-<tr>
+</tr> {% endcomment %}
+{% comment %} <tr>
 <td>Script ProjectId</td>
 <td>{{ item.ProjectId }}</td>
-</tr>
+</tr> {% endcomment %}
 <tr>
 <td>Script Path</td>
 <td><a href="{{site.sourcebaseurl }}/artifacts/{{ item.ProjectId }}/">{{site.sourcebaseurl }}/artifacts/{{ item.ProjectId }}</a></td>
