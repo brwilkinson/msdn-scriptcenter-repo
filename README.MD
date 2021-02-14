@@ -22,5 +22,4 @@
 1) Enable "Pages" on the repo on GitHub settings: e.g. https://guides.github.com/features/pages/
 1) Push the changes and test.
 
-### I am still wiring up the Search and the Tags, Categories, so I will remove this comment once this is complete
-### Until this then process is just in "Preview" as a "Sample" page.
+### I am still wiring up the Tags, Categories, I will remove this comment once this is complete
