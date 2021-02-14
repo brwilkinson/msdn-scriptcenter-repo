@@ -9,7 +9,7 @@ css: ["index.css"]
     {% include search_form.html %}
   </div>
 
-  {% comment %} <div class="thi-columns">
+  <!-- {% comment %} <div class="thi-columns">
     <ul class="tag-post">
     {% for script in site.data.scripts.userProject %}
       <a class="post-title" href="{{ script.ProjectId }}{{ post.url }}">
@@ -20,7 +20,7 @@ css: ["index.css"]
       </a>
     {% endfor %}
     </ul>
-  </div> {% endcomment %}
+  </div> {% endcomment %} -->
 
 {% tablerow item in site.data.scripts.userProject cols: 10 %}
 <table>
@@ -60,7 +60,7 @@ css: ["index.css"]
 <br/>
 {% endtablerow %}
 
-  <div class="tag-div" style="margin-top: 1rem;">
+  <!-- <div class="tag-div" style="margin-top: 1rem;">
     <h2 class="h2-title">Categories</h2>
     <div class="tag-list">
       {% for cat in site.categories %}
@@ -76,11 +76,11 @@ css: ["index.css"]
         {% endif %}
       {% endfor %}
     </div>
-  </div>
+  </div> -->
 
   <!-- <h2 class="h2-title">List of notes</h2> -->
 
-  <div class="thi-columns">
+  <!-- <div class="thi-columns">
     <ul class="tag-post">
     {% for post in paginator.posts %}
       <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
@@ -90,9 +90,9 @@ css: ["index.css"]
       </a>
     {% endfor %}
     </ul>
-  </div>
+  </div> -->
 
-  <div class="col s12 center-align">
+  <!-- <div class="col s12 center-align">
     <ul class="pagination">
       <li class="{% unless paginator.previous_page %}disabled{% else %}waves-effect{% endunless %}">
         {% if paginator.previous_page %}
@@ -132,9 +132,9 @@ css: ["index.css"]
         </a>
       </li>
     </ul>
-  </div>
+  </div> -->
 
-  <div class="tag-div">
+  <!-- <div class="tag-div">
     <h2 class="h2-title">Tags</h2>
     <div class="tag-list">
       {% for tag in site.tags %}
@@ -143,7 +143,7 @@ css: ["index.css"]
         <a class="tag-chip" href="{{ site.baseurl }}/tags#{{tag[0] | slugify}}{% if test == testup %}_cap{% endif %}"><div class="chip z-depth-1">{{tag[0]}}</div></a>
       {% endfor %}
     </div>
-  </div>
+  </div> -->
   
 </div>
 
