@@ -22,7 +22,15 @@ css: ["page.css","search.css"]
 						"title": "{{ script.Title | xml_escape }}",
 						"categories": "{{ script.TagList | join: ", " | xml_escape }}",
 						"url": "{{site.sourcebaseurl }}/artifacts/{{ script.ProjectId }}/{{script.ScriptFile}}",
-						"content": {{ script.Description | strip_html | replace_regex: "[\s/\n]+"," " | strip | jsonify }}
+						"content": {{ script.Description | strip_html | replace_regex: "[\s/\n]+"," " | strip | jsonify }},
+						"modifieddate": "{{ script.ModifiedDate }}",
+						"createddate": "{{ script.CreatedDate }}",
+						"ratingscount": "{{ script.RatingsCount }}",
+						"averagerating": "{{ script.AverageRating }}",
+						"projectname": "{{ script.ProjectName }}",
+						"projectid": "{{ script.ProjectId }}",
+						"scriptfile": "{{ script.ScriptFile }}",
+						"site": "{{ site.sourcebaseurl }}"
 					}
 					{% assign added = true %}
 				{% endunless %}

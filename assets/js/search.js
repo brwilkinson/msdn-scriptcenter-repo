@@ -69,7 +69,56 @@ layout: null
 					contentPreview = getPreview(query, item.content, 170),
 					titlePreview = getPreview(query, item.title);
 
-				resultsHTML += "<li style='list-style-type:none;'><a class='search-result-title' href='" + item.url.trim() + "'>" + titlePreview + "</a><p style='font-size:smaller;'>" + contentPreview + "</p></li>";
+				// resultsHTML += "<li style='list-style-type:none;'><a class='search-result-title' href='" + item.url.trim() + "'>" + titlePreview + "</a><p style='font-size:smaller;'>" + contentPreview + "</p></li>";
+
+				// resultsHTML += "<li style='list-style-type:none;'><a class='search-result-title' href='" + item.url.trim() + "'>" + titlePreview + "</a><p style='font-size:smaller;'>" + contentPreview + "</p></li>";
+
+resultsHTML += `
+				<table>
+					<tr>
+					<th colspan=1>Title</th>
+					<th colspan=4>${ item.title }</th>
+					</tr>
+					<tr>
+					<th colspan=1>Description</th>
+					<td colspan=4>${ item.content }</td>
+					</tr>
+					<tr>
+					<th rowspan = 2>Script</th>
+					<th>ModifiedDate</th>
+					<td>${ item.modifieddate }</td>
+					<th>CreatedDate</th>
+					<td>${ item.createddate }</td>
+					</tr>
+					<tr>
+					<th>RatingsCount</th>
+					<td>${ item.ratingscount }</td>
+					<th>AverageRating</th>
+					<td>${ item.averagerating }</td>
+					</tr>
+					<tr>
+					<th colspan=1>ProjectName</th>
+					<td colspan=2>${ item.projectName }</td>
+					<th>ProjectID</th>
+					<td>${ item.projectid }</td>
+					</tr>
+					<tr>
+					<th colspan=1>GitHub Path</th>
+					<td colspan=4><a href="${item.site }/artifacts/${ item.projectid }/">${item.site }/artifacts/${ item.projectid }</a></td>
+					</tr>
+					<tr>
+					<th colspan=1>GitHub View</th>
+					<td colspan=4><a href="${item.site }/artifacts/${ item.projectid }/${item.scriptfile}">${item.scriptfile}</a></td>
+					</tr>
+					<tr>
+					<th colspan=1>Script</th>
+					<td colspan=4><script src="http://gist-it.appspot.com/${item.site }/artifacts/${ item.projectid }/${item.scriptfile}">${item.scriptfile}</script></td>
+					</tr>
+				</table>
+				<br/>
+			`;
+
+
 			});
 
 			searchResultsEl.innerHTML = resultsHTML;
@@ -86,6 +135,14 @@ layout: null
 		this.field("categories");
 		this.field("url");
 		this.field("content");
+		this.field("modifieddate");
+		this.field("createddate");
+		this.field("ratingscount");
+		this.field("averagerating");
+		this.field("projectname");
+		this.field("projectid");
+		this.field("scriptfile");
+		this.field("site");
 	});
 
 	var query = decodeURIComponent((getQueryVariable("q") || "").replace(/\+/g, "%20")),
