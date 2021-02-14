@@ -9,141 +9,52 @@ css: ["index.css"]
     {% include search_form.html %}
   </div>
 
-  <!-- {% comment %} <div class="thi-columns">
-    <ul class="tag-post">
-    {% for script in site.data.scripts.userProject %}
-      <a class="post-title" href="{{ script.ProjectId }}{{ post.url }}">
-        <li>
-          {{ script.Title }} <small class="post-date">{{script.PublishedDate | date: "%d/%m/%Y"}}</small>
-          
-        </li>
-      </a>
-    {% endfor %}
-    </ul>
-  </div> {% endcomment %} -->
 
-{% tablerow item in site.data.scripts.userProject cols: 10 %}
+{% assign items = site.data.scripts.userProject | sort: 'ModifiedDate' | reverse %}
+{% tablerow item in items %}
 <table>
 <tr>
-<td>Script Title</td>
-<td>{{ item.Title }}</td>
+<th colspan=1>Title</th>
+<th colspan=4>{{ item.Title }}</th>
 </tr>
 <tr>
-<td>Script Description</td>
-<td>{{ item.Description }}</td>
+<th colspan=1>Description</th>
+<td colspan=4>{{ item.Description }}</td>
 </tr>
 <tr>
-<td>Script ModifiedDate</td>
+<th rowspan = 2>Script</th>
+<th>ModifiedDate</th>
 <td>{{ item.ModifiedDate }}</td>
-</tr>
-<tr>
-<td>Script CreatedDate</td>
+<th>CreatedDate</th>
 <td>{{ item.CreatedDate }}</td>
 </tr>
-{% comment %} <tr>
-<td>Script ProjectName</td>
-<td>{{ item.ProjectName }}</td>
-</tr> {% endcomment %}
-{% comment %} <tr>
-<td>Script ProjectId</td>
-<td>{{ item.ProjectId }}</td>
-</tr> {% endcomment %}
 <tr>
-<td>Script Path</td>
-<td><a href="{{site.sourcebaseurl }}/artifacts/{{ item.ProjectId }}/">{{site.sourcebaseurl }}/artifacts/{{ item.ProjectId }}</a></td>
+<th>RatingsCount</th>
+<td>{{ item.RatingsCount }}</td>
+<th>AverageRating</th>
+<td>{{ item.AverageRating | round: 2 }}</td>
 </tr>
 <tr>
-<td>Script Download</td>
-<td><a href="{{site.sourcebaseurl }}/artifacts/{{ item.ProjectId }}/{{item.ScriptFile}}">{{item.ScriptFile}}</a></td>
+<th colspan=1>ProjectName</th>
+<td colspan=2>{{ item.ProjectName }}</td>
+<th>ProjectID</th>
+<td>{{ item.ProjectId }}</td>
+</tr>
+<tr>
+<th colspan=1>GitHub Path</th>
+<td colspan=4><a href="{{site.sourcebaseurl }}/artifacts/{{ item.ProjectId }}/">{{site.sourcebaseurl }}/artifacts/{{ item.ProjectId }}</a></td>
+</tr>
+<tr>
+<th colspan=1>GitHub View</th>
+<td colspan=4><a href="{{site.sourcebaseurl }}/artifacts/{{ item.ProjectId }}/{{item.ScriptFile}}">{{item.ScriptFile}}</a></td>
+</tr>
+<tr>
+<th colspan=1>GitHub View</th>
+<td colspan=4><script src="{{site.sourcebaseurl }}/artifacts/{{ item.ProjectId }}/{{item.ScriptFile}}">{{item.ScriptFile}}</script></td>
 </tr>
 </table>
 <br/>
 {% endtablerow %}
-
-  <!-- <div class="tag-div" style="margin-top: 1rem;">
-    <h2 class="h2-title">Categories</h2>
-    <div class="tag-list">
-      {% for cat in site.categories %}
-        {% for catDat in site.data.categories %}
-          {% if catDat.slug == cat[0] %}
-            {% assign catego = catDat %}
-          {% endif %}
-        {% endfor %}
-        {% if catego %}
-          {% capture test %}{{cat[0] | slice: 0}}{% endcapture %}
-          {% capture testup %}{{cat[0] | slice: 0 | upcase}}{% endcapture %}
-          <a class="tag-chip" href="{{ site.baseurl }}/categories#{{cat[0] | slugify}}{% if test == testup %}_cap{% endif %}"><div class="chip z-depth-1">{{ catego.name }}</div></a>
-        {% endif %}
-      {% endfor %}
-    </div>
-  </div> -->
-
-  <!-- <h2 class="h2-title">List of notes</h2> -->
-
-  <!-- <div class="thi-columns">
-    <ul class="tag-post">
-    {% for post in paginator.posts %}
-      <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-        <li>
-          {{ post.title }} <small class="post-date">{{post.date | date: "%d/%m/%Y"}}</small>
-        </li>
-      </a>
-    {% endfor %}
-    </ul>
-  </div> -->
-
-  <!-- <div class="col s12 center-align">
-    <ul class="pagination">
-      <li class="{% unless paginator.previous_page %}disabled{% else %}waves-effect{% endunless %}">
-        {% if paginator.previous_page %}
-        {% if paginator.previous_page == 1 %}
-        <a href="{{site.baseurl}}/">
-        {% else %}
-        <a href="{{site.baseurl}}/page{{paginator.previous_page}}">
-        {% endif %}
-        {% else %}
-        <a href="#!">
-        {% endif %}
-          <i class="material-icons">chevron_left</i>
-        </a>
-      </li>
-      {% if paginator.page == 1 %}
-      <li class="active teal">
-        <a href="#!">1</a>
-      {% else %}
-      <li class="waves-effect">
-        <a href="{{site.baseurl}}/">1</a>
-      {% endif %}
-      </li>
-      {% for count in (2..paginator.total_pages) %}
-      {% if count == paginator.page %}
-      <li class="active teal"><a href="#!">{{count}}</a></li>
-      {% else %}
-      <li class="waves-effect"><a href="{{site.baseurl}}/page{{count}}">{{count}}</a></li>
-      {% endif %}
-      {% endfor %}
-      <li class="{% unless paginator.next_page %}disabled{% else %}waves-effect{% endunless %}">
-        {% if paginator.next_page %}
-        <a href="{{site.baseurl}}/page{{paginator.next_page}}">
-        {% else %}
-        <a href="#!">
-        {% endif %}
-          <i class="material-icons">chevron_right</i>
-        </a>
-      </li>
-    </ul>
-  </div> -->
-
-  <!-- <div class="tag-div">
-    <h2 class="h2-title">Tags</h2>
-    <div class="tag-list">
-      {% for tag in site.tags %}
-        {% capture test %}{{tag[0] | slice: 0}}{% endcapture %}
-        {% capture testup %}{{tag[0] | slice: 0 | upcase}}{% endcapture %}
-        <a class="tag-chip" href="{{ site.baseurl }}/tags#{{tag[0] | slugify}}{% if test == testup %}_cap{% endif %}"><div class="chip z-depth-1">{{tag[0]}}</div></a>
-      {% endfor %}
-    </div>
-  </div> -->
   
 </div>
 
