@@ -45,8 +45,12 @@ css: ["index.css"]
 <td>{{ item.ProjectId }}</td>
 </tr>
 <tr>
-<td>Script</td>
-<td><a href="{{site.baseurl }}/artifacts/{{ item.ProjectId }}/{{item.ScriptFile}}">{{item.ScriptFile}}</a></td>
+<td>Script Path</td>
+<td><a href="{{site.sourcebaseurl }}/artifacts/{{ item.ProjectId }}/">{{site.sourcebaseurl }}/artifacts/{{ item.ProjectId }}</a></td>
+</tr>
+<tr>
+<td>Script Download</td>
+<td><a href="{{site.sourcebaseurl }}/artifacts/{{ item.ProjectId }}/{{item.ScriptFile}}">{{item.ScriptFile}}</a></td>
 </tr>
 </table>
 <br/>
