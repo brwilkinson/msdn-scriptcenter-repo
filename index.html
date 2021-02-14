@@ -13,7 +13,7 @@ css: ["index.css"]
 {% assign items = site.data.scripts.userProject | sort: 'ModifiedDate' | reverse %}
 {% tablerow item in items %}
 <table>
-<tr>
+<tr id="myColor" >
 <th colspan=1>Title</th>
 <th colspan=4>{{ item.Title }}</th>
 </tr>

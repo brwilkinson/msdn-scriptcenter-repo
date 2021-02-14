@@ -75,7 +75,7 @@ layout: null
 
 resultsHTML += `
 				<table>
-					<tr>
+					<tr id="myColor">
 					<th colspan=1>Title</th>
 					<th colspan=4>${ item.title }</th>
 					</tr>
