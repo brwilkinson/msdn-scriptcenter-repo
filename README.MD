@@ -1,1 +1,1 @@
-echo #### https://brwilkinson.github.io/msdn-scriptcenter-repo/
+#### https://brwilkinson.github.io/msdn-scriptcenter-repo/
