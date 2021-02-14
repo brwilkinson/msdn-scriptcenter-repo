@@ -98,7 +98,7 @@ resultsHTML += `
 					</tr>
 					<tr>
 					<th colspan=1>ProjectName</th>
-					<td colspan=2>${ item.projectName }</td>
+					<td colspan=2>${ item.projectname }</td>
 					<th>ProjectID</th>
 					<td>${ item.projectid }</td>
 					</tr>
