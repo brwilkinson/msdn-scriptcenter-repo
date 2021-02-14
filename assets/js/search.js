@@ -110,10 +110,6 @@ resultsHTML += `
 					<th colspan=1>GitHub View</th>
 					<td colspan=4><a href="${item.site }/artifacts/${ item.projectid }/${item.scriptfile}">${item.scriptfile}</a></td>
 					</tr>
-					<tr>
-					<th colspan=1>Script</th>
-					<td colspan=4><script src="http://gist-it.appspot.com/${item.site }/artifacts/${ item.projectid }/${item.scriptfile}">${item.scriptfile}</script></td>
-					</tr>
 				</table>
 				<br/>
 			`;
