@@ -15,12 +15,18 @@
     1) For now we are only using the "userProject" array from the JSON object, you can choose to delete the other arraya/objects, if you like.
 1) Execute the script in the scripts directory scripts\add-script-metadata.ps1
     1) This will recurse through all of the directories under artifacts and find only those with a nested ps1 file
-    1) It will update the metadata in the data File to include the script path used to link to your scripts in github
+        1) Adjust the filter if you have other types of scripts/files
+        1) You will need to modify this if you have more than 1 Script
+            - There is a link to the Directory anyway, so multiple scripts can be viewed there anyway
+    1) The script will update the metadata in the data File to include the script path used to link to your scripts in github base repo directly
 1) Update the _config.yml file with your GitHub Repo
     1) The "sourcebaseurl" that points to which ever branch you are using for your scripts
     1) The "url" which is the GitHubs Pages URL of your repo
     1) Other contact info on that page, for your GitHub pages website.
+    1) I haven't tested other Themes, I tested only with: jekyll-theme-cayman
 1) Enable "Pages" on the repo on GitHub settings: e.g. https://guides.github.com/features/pages/
-1) Push the changes and test.
+1) Push your changes and test.
+1) Feel free to reach out if you have any feedback, this was just a quick project to get access back to Search/Share my scripts Links.
+    1) Viewing the Scripts on GitHub works really well, since that is what it was designed for  :)
 
 ### I am still wiring up the Tags, Categories, I will remove this comment once this is complete
