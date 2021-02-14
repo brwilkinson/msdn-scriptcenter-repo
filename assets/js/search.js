@@ -110,6 +110,10 @@ resultsHTML += `
 					<th colspan=1>GitHub View</th>
 					<td colspan=4><a href="${item.site }/artifacts/${ item.projectid }/${item.scriptfile}">${item.scriptfile}</a></td>
 					</tr>
+					<tr>
+					<th colspan=1>TagList</th>
+					<td colspan=4>${ item.taglist }</td>
+					</tr>
 				</table>
 				<br/>
 			`;
@@ -139,6 +143,7 @@ resultsHTML += `
 		this.field("projectid");
 		this.field("scriptfile");
 		this.field("site");
+		this.field("taglist");
 	});
 
 	var query = decodeURIComponent((getQueryVariable("q") || "").replace(/\+/g, "%20")),
