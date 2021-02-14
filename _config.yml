@@ -4,7 +4,7 @@ title: msdn script center repro
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   clone from script center repo
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "msdn-scriptcenter-repo" # the subpath of your site, e.g. /blog
 url: "brwilkinson.github.io/msdn-scriptcenter-repo/"
 twitter_username: brwilkinson
 github_username:  brwilkinson
