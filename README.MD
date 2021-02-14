@@ -1,4 +1,4 @@
-### https://brwilkinson.github.io/msdn-scriptcenter-repo/
+### URL for my Web Repo of Scripts: https://brwilkinson.github.io/msdn-scriptcenter-repo/
 </br>
 
 #### Instructions for hosting your own Script Center Scripts in your own repo
