@@ -2298,7 +2298,7 @@
     {
       "ProjectId": 480113,
       "ProjectName": "Sync-Build-Files-to-Azure-5ae03950",
-      "Title": "Sync (Component Build) Files to Azure File Share (updated July 2019)",
+      "Title": "Sync (Component Build) Files to Azure File Share (updated July 2021)",
       "Description": "This script does the following:1) Connects to an Azure Storage Account, using a Service Principal or User account that is currently logged in2) Using a local Directory it will look at that directory, then will check the Files and Directories in a specified component build directo",
       "FileReleaseEnabled": true,
       "DiscussionsEnabled": true,
@@ -2318,7 +2318,7 @@
       "RatingsCount": 0,
       "AverageRating7Days": 0.0,
       "RatingsCount7Days": 0,
-      "ModifiedDate": "2019-08-06T21:59:15.85",
+      "ModifiedDate": "2021-02-16T21:59:15.85",
       "ProjectType": "GenericProject",
       "ScriptFile": "[224281] Sync-AzureFileShareBuildComponent.ps1"
     },
