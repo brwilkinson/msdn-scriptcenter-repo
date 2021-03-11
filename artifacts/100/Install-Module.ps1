@@ -21,6 +21,8 @@ function Install-Module
     Import-Module -Name powershellget @Params -PassThru -MaximumVersion 2.2.5 -Prefix My -EA Ignore
     $PSBoundParameters
     Install-MyModule @PSBoundParameters -Repository PSGallery -Force -Confirm:$false
+
+    Get-Module -Name $Name -ListAvailable -All | select Name,Path,Version
 }
 
 function Uninstall-Module
@@ -44,4 +46,6 @@ function Uninstall-Module
     Import-Module -Name powershellget @Params -PassThru -MaximumVersion 2.2.5 -Prefix My -EA Ignore
     $PSBoundParameters
     Uninstall-MyModule @PSBoundParameters
+
+    Get-Module -Name $Name -ListAvailable -All | select Name,Path,Version
 }
