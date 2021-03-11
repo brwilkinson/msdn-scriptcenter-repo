@@ -1,6 +1,8 @@
 function Install-Module
 {
+    [cmdletbinding()]
     param (
+        [parameter(Mandatory,Position = 0)]
         [string]$Name,
         [switch]$AllowPrerelease,
         [string]$RequiredVersion
@@ -22,12 +24,14 @@ function Install-Module
     $PSBoundParameters
     Install-MyModule @PSBoundParameters -Repository PSGallery -Force -Confirm:$false
 
-    Get-Module -Name $Name -ListAvailable -All | select Name,Path,Version
+    Get-Module -Name $Name -ListAvailable -All | Select-Object Name, Path, Version
 }
 
 function Uninstall-Module
 {
+    [cmdletbinding()]
     param (
+        [parameter(Mandatory,Position = 0)]
         [string]$Name
     )
 
@@ -47,5 +51,5 @@ function Uninstall-Module
     $PSBoundParameters
     Uninstall-MyModule @PSBoundParameters
 
-    Get-Module -Name $Name -ListAvailable -All | select Name,Path,Version
+    Get-Module -Name $Name -ListAvailable -All | Select-Object Name, Path, Version
 }
