@@ -1,6 +1,33 @@
 {
   "userProject": [
     {
+      "ProjectId": 100,
+      "ProjectName": "Install-Module override to ALWAYS store modules in Program Files\\WindowsPowerShell",
+      "Title": "Easily Install and Uninstall Modules without fuss in PowerShell or WindowsPowerShell",
+      "Description": "Consolidate your Modules in a single directory",
+      "FileReleaseEnabled": true,
+      "DiscussionsEnabled": true,
+      "WorkItemTrackingEnabled": true,
+      "SourceCodeBrowsingEnabled": false,
+      "CreatedDate": "2021-03-11T21:41:23.703",
+      "IsPublished": true,
+      "PublishedDate": "2021-03-11T21:41:23.703",
+      "LastActivationEmailDate": null,
+      "UnpublishedDate": null,
+      "InitialProjectName": "Install-Module override to ALWAYS store modules in Program Files\\WindowsPowerShell",
+      "TagList": "PowerShellGet,Install-Module,PackageManagement",
+      "AffiliateName": "CodePlex",
+      "PrimaryLanguage": 1033,
+      "IsLocked": false,
+      "AverageRating": 4.190476190476191,
+      "RatingsCount": 21,
+      "AverageRating7Days": 3.0,
+      "RatingsCount7Days": 1,
+      "ModifiedDate": "2021-03-11T21:41:23.703",
+      "ProjectType": "GenericProject",
+      "ScriptFile": "Install-Module.ps1"
+    },
+    {
       "ProjectId": 9339,
       "ProjectName": "d0670079-6158-4dc5-a9da-b261c70e4b7d",
       "Title": "A script to monitor servers, Ping Test, with email notification",
