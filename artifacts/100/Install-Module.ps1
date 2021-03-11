@@ -18,7 +18,7 @@ function Install-Module
             UseWindowsPowerShell = $true
         }
     }
-    Import-Module -Name powershellget @Params -PassThru -MaximumVersion 2.2.5 -Prefix My
+    Import-Module -Name powershellget @Params -PassThru -MaximumVersion 2.2.5 -Prefix My -EA Ignore
     $PSBoundParameters
     Install-MyModule @PSBoundParameters -Repository PSGallery -Force -Confirm:$false
 }
@@ -41,7 +41,7 @@ function Uninstall-Module
             UseWindowsPowerShell = $true
         }
     }
-    Import-Module -Name powershellget @Params -PassThru -MaximumVersion 2.2.5 -Prefix My
+    Import-Module -Name powershellget @Params -PassThru -MaximumVersion 2.2.5 -Prefix My -EA Ignore
     $PSBoundParameters
     Uninstall-MyModule @PSBoundParameters
 }
