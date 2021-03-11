@@ -3,7 +3,7 @@
     {
       "ProjectId": 100,
       "ProjectName": "Install-Module override to ALWAYS store modules in Program Files\\WindowsPowerShell",
-      "Title": "Easily Install and Uninstall Modules without fuss in PowerShell or WindowsPowerShell",
+      "Title": "Use Install-Module to easily Install and Uninstall Modules without fuss in PowerShell or WindowsPowerShell",
       "Description": "Consolidate your Modules in a single directory",
       "FileReleaseEnabled": true,
       "DiscussionsEnabled": true,
