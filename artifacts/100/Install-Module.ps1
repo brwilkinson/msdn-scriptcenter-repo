@@ -22,7 +22,9 @@ function Install-Module
     }
     Import-Module -Name powershellget @Params -PassThru -MaximumVersion 2.2.5 -Prefix My -EA Ignore
     $PSBoundParameters
-    Install-MyModule @PSBoundParameters -Repository PSGallery -Force -Confirm:$false
+    
+    # gcm Install-MyModule -syntax
+    Install-MyModule -Repository PSGallery -Force -Confirm:$false @PSBoundParameters
 
     Get-Module -Name $Name -ListAvailable -All | Select-Object Name, Path, Version
 }
