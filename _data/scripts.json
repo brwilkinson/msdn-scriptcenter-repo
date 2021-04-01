@@ -704,7 +704,7 @@
     },
     {
       "ProjectId": 16685,
-      "ProjectName": "Edit-advanced-functions-73076926",
+      "ProjectName": "Edit-advanced-functions (Updated 2021/04)",
       "Title": "Edit advanced functions (cmdlets) or script from within a Module to run in ISE",
       "Description": "If you write your own scripts and save them as a module, this function easily opens the cmdlet/function for quick editing. Not having to search the file system to open scripts means that you can more efficiently update and manage modifications to your code. Will run in the ISE...",
       "FileReleaseEnabled": true,
@@ -725,7 +725,7 @@
       "RatingsCount": 0,
       "AverageRating7Days": 0.0,
       "RatingsCount7Days": 0,
-      "ModifiedDate": "2012-08-05T14:59:10.707",
+      "ModifiedDate": "2021-04-01T14:59:10.707",
       "ProjectType": "GenericProject",
       "ScriptFile": "[57064] Edit-Cmdlet.ps1"
     },
