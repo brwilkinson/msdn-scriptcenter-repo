@@ -2,13 +2,14 @@ function Install-Module
 {
     [cmdletbinding()]
     param (
-        [parameter(Mandatory,Position = 0)]
+        [parameter(Mandatory, Position = 0)]
         [string]$Name,
         [switch]$AllowPrerelease,
-        [string]$RequiredVersion
+        [string]$RequiredVersion,
+        [validateset('CurrentUser', 'AllUsers')]
+        [string]$Scope
     )
 
-    $env:PSModulePath = 'C:\Program Files\WindowsPowerShell\Modules'
     Remove-Module -Name PowerShellGet -EA Ignore
     $Params = if ($PSVersionTable.PSVersion.Major -le 5)
     {
@@ -24,7 +25,7 @@ function Install-Module
     $PSBoundParameters
     
     # gcm Install-MyModule -syntax
-    Install-MyModule -Repository PSGallery -Force -Confirm:$false @PSBoundParameters
+    Install-MyModule -Repository PSGallery -Force -AllowClobber -Confirm:$false @PSBoundParameters
 
     Get-Module -Name $Name -ListAvailable -All | Select-Object Name, Path, Version
 }
@@ -33,7 +34,7 @@ function Uninstall-Module
 {
     [cmdletbinding()]
     param (
-        [parameter(Mandatory,Position = 0)]
+        [parameter(Mandatory, Position = 0)]
         [string]$Name
     )
 
