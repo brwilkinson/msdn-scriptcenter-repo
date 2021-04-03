@@ -41,11 +41,6 @@ function Sync-AzureBlobBuildComponent
     [String]$RGName = 'rgglobalbuild'
     [String]$ContainerName = 'builds'
 
-    # Azure Blob Container Info
-    [String]$SAName = 'acu1brwhaag1saglobal'
-    [String]$RGName = 'ACU1-BRW-HAA-RG-G1'
-    [String]$ContainerName = 'builds'
-
     # if you already have a storage account you can get the context
     $SA = Get-AzStorageAccount -ResourceGroupName $RGName -Name $SAName
 
