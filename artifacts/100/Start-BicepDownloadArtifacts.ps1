@@ -15,17 +15,16 @@ function Start-BicepDownloadArtifact
     
     if ($Latest)
     {
-        gh run list -R azure/bicep | ConvertFrom-Csv -Delimiter `t -Header STATE, STATUS, NAME, WORKFLOW, BRANCH, EVENT, ID, ELAPSED, AGE |
+        $BuildId = gh run list -R azure/bicep |
+            ConvertFrom-Csv -Delimiter `t -Header STATE, STATUS, NAME, WORKFLOW, BRANCH, EVENT, ID, ELAPSED, AGE |
             Where-Object branch -EQ main | Where-Object state -EQ completed | Where-Object status -EQ success |
-            Select-Object -First 1 | ForEach-Object {
-                Write-Verbose $_ -Verbose
-                $BuildId = $_.Id
-                $Artifacts | ForEach-Object {
-                    gh run download $BuildId -R azure/bicep -n $_
-                }
-            }
+            Select-Object -First 1 | foreach Id
+
+        $Artifacts | ForEach-Object {
+            gh run download $BuildId -R azure/bicep -n $_
+        }
     }
-    else 
+    else
     {
         $Artifacts | ForEach-Object {
             gh release download -R azure/bicep -p $_*
