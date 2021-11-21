@@ -19,6 +19,8 @@ function Start-BicepDownloadArtifact
             ConvertFrom-Csv -Delimiter `t -Header STATE, STATUS, NAME, WORKFLOW, BRANCH, EVENT, ID, ELAPSED, AGE |
             Where-Object branch -EQ main | Where-Object state -EQ completed | Where-Object status -EQ success |
             Select-Object -First 1 | foreach Id
+        
+        gh run view $buildid -R azure/bicep | select -last 1
 
         $Artifacts | ForEach-Object {
             gh run download $BuildId -R azure/bicep -n $_
