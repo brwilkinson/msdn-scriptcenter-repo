@@ -33,7 +33,7 @@ function Start-BicepDownloadArtifact
         }
     }
 
-    code-insiders --install-extension vscode-bicep.vsix --force --log off
+    code-insiders --install-extension vscode-bicep.vsix --force
     .\bicep-setup-win-x64.exe /SILENT
     Pop-Location
 }
