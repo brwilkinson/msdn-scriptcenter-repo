@@ -1,6 +1,8 @@
 function Start-BicepDownloadArtifact
 {
     param (
+        [switch]$Branch = 'main',
+
         [switch]$Latest,
 
         [string]$Repo = 'azure/bicep',
@@ -21,7 +23,7 @@ function Start-BicepDownloadArtifact
     {
         $BuildId = gh run list -R $Repo |
             ConvertFrom-Csv -Delimiter `t -Header STATE, STATUS, NAME, WORKFLOW, BRANCH, EVENT, ID, ELAPSED, AGE |
-            Where-Object branch -EQ main | Where-Object state -EQ completed | Where-Object status -EQ success |
+            Where-Object branch -EQ $Branch | Where-Object state -EQ completed | Where-Object status -EQ success |
             Select-Object -First 1 | foreach Id
         
         gh run view $BuildId -R $Repo | select -last 1
@@ -32,6 +34,8 @@ function Start-BicepDownloadArtifact
     }
     else
     {
+        gh release view -R $Repo | select -last 1
+        
         $Artifacts | ForEach-Object {
             gh release download -R $Repo -p $_*
         }
