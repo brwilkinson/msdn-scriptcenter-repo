@@ -1,7 +1,7 @@
 function Start-BicepDownloadArtifact
 {
     param (
-        [switch]$Branch = 'main',
+        [string]$Branch = 'main',
 
         [switch]$Latest,
 
@@ -26,6 +26,7 @@ function Start-BicepDownloadArtifact
             Where-Object branch -EQ $Branch | Where-Object state -EQ completed | Where-Object status -EQ success |
             Select-Object -First 1 | foreach Id
         
+        # view run URL
         gh run view $BuildId -R $Repo | select -last 1
 
         $Artifacts | ForEach-Object {
@@ -34,6 +35,7 @@ function Start-BicepDownloadArtifact
     }
     else
     {
+        # view release URL
         gh release view -R $Repo | select -last 1
         
         $Artifacts | ForEach-Object {
