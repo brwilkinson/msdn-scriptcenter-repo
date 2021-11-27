@@ -9,12 +9,15 @@
     {
 
         $Base = Get-Command -Name $Cmdlet -ErrorAction Stop -ov command |
-            Select-Object Module |
-            ForEach-Object {
-                Get-Module $_.Module -ErrorAction Stop |
-                    Select-Object -ExpandProperty ModuleBase
-                }
-        $Path = (Join-Path -Path $Base -ChildPath ($Command[0].Name + '.*') -Resolve -ErrorAction Stop) 
+            ForEach-Object Module | Get-Module -ErrorAction Stop | ForEach-Object ModuleBase
+
+        $ChildPath =switch ($Command[0].CommandType)
+        {
+            'Alias' {$command[0].ResolvedCommand.Name}
+            Default {$command[0].Name}
+        }
+
+        $Path = (Join-Path -Path $Base -ChildPath ($ChildPath + '*.*') -Resolve -ErrorAction Stop)
         if ($host.name -like '*ise*' -or $host.name -eq 'Visual Studio Code Host')
         {
             psEdit $Path
@@ -26,7 +29,9 @@
     }
     catch
     {
-        'Cannot find that file, this is likely not a user written cmdlet'
+        code foo.txt
     }
 }#Edit-Cmdlet
+
+
 
