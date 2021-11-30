@@ -5,6 +5,8 @@ function Start-BicepDownloadArtifact
 
         [switch]$Latest,
 
+        [int]$Limit = 40,
+
         [string]$Repo = 'azure/bicep',
 
         [string]$DownloadPath = "$home\Downloads\",
@@ -21,7 +23,7 @@ function Start-BicepDownloadArtifact
     
     if ($Latest)
     {
-        $BuildId = gh run list -R $Repo |
+        $BuildId = gh run list -R $Repo -L $Limit |
             ConvertFrom-Csv -Delimiter `t -Header STATE, STATUS, NAME, WORKFLOW, BRANCH, EVENT, ID, ELAPSED, AGE |
             Where-Object branch -EQ $Branch | Where-Object state -EQ completed | Where-Object status -EQ success |
             Select-Object -First 1 | foreach Id
