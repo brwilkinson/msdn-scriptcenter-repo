@@ -28,6 +28,11 @@ function Start-BicepDownloadArtifact
             Where-Object branch -EQ $Branch | Where-Object state -EQ completed | Where-Object status -EQ success |
             Select-Object -First 1 | foreach Id
         
+        if (! ($BuildId))
+        {
+            return "No successful builds found in [$Limit] runs, pass in a higher limit."
+        }
+
         # view run URL
         gh run view $BuildId -R $Repo | select -last 1
 
