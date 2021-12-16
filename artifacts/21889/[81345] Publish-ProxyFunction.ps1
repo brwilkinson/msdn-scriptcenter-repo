@@ -20,7 +20,7 @@ Begin
 
     # Output the data to the temp file and open it up.
     ($Header + $NewMeta + $Trailor) | Out-File $FilePath
-    psEdit -filenames $FilePath
+    psEdit $FilePath
 
 }#Begin
 
