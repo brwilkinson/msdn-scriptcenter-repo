@@ -17,3 +17,5 @@ user:
   twitter: twitter.com/brwilkinson
   avatar: "/assets/res/user.png"
   github: "brwilkinson"
+
+port: 4002
